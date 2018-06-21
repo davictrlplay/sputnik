@@ -7,6 +7,8 @@ public class MovementController : MonoBehaviour {
 	public float f_force; // Variavel criada para força
 	public int i_forceLevel; // Variavel criada para contar o nivel da força
 	public float f_sides; // Variavel criada para força dos lados
+	private float f_up;
+	private float seconds;
 	public Rigidbody rb_person; 
 
 	// Use this for initialization
@@ -15,6 +17,7 @@ public class MovementController : MonoBehaviour {
 		f_force = 5f; // Adiciona o valor de 5 à variavel f_force
 		f_sides = 4f; // Adiciona o valor de 4 à variavel f_sides
 		i_forceLevel = 0; // Adiciona o valor de 0 para o nivel da força
+		f_up = 5;
 	}
 	
 	// Update is called once per frame
@@ -50,6 +53,14 @@ public class MovementController : MonoBehaviour {
 		//Para ir para esquerda
 		if (Input.GetKeyDown (KeyCode.A)) { //Se a tecla pressionada for A
 			this.transform.Translate (-f_sides, 0f, 0f); //Remove o valor de f_sides para o eixo.X usando o transform
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+				this.transform.Translate (0f, 0.9f, 0f);
+				seconds -= 1f * Time.deltaTime 
+				if (seconds <= 0){
+					this.transform.Translate (0f, -0.9f, 0f);
+				}
 		}
 	}
 }
