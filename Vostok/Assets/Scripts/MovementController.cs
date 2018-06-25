@@ -57,7 +57,7 @@ public class MovementController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 				this.transform.Translate (0f, 0.9f, 0f);
-				seconds -= 1f * Time.deltaTime 
+				seconds -= 1f * Time.deltaTime;
 				if (seconds <= 0){
 					this.transform.Translate (0f, -0.9f, 0f);
 				}
