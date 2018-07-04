@@ -56,13 +56,12 @@ public class MovementController : MonoBehaviour {
 			this.transform.Translate (-f_sides, 0f, 0f); //Remove o valor de f_sides para o eixo.X usando o transform
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			//rb_person.AddForce (Vector3.up * f_force);
-			for (i = 0; i < i_forceLevel; i++) {
-				if (i_forceLevel < 6) {
-					rb_person.AddForce (Vector3.up * 95f);
-				} else {
-					rb_person.AddForce (Vector3.up * i_forceUp);
+		if (Input.GetKeyDown (KeyCode.Space)) { //Se a tecla pressionada for Space	
+			for (i = 0; i < i_forceLevel; i++) { //Para i igual a zero, aumentar até valor de i_forceLevel
+				if (i_forceLevel < 6) { //Se i_forceLever for menor que 6
+					rb_person.AddForce (Vector3.up * 95f / i_forceLevel); //Adiciona força de 95.0 divido por i_forceLevel no vetor 3 para cima
+				} else { //Caso for maior que 6
+					rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
 				}
 			}	
 		}
