@@ -7,19 +7,20 @@ public class MovementController : MonoBehaviour {
 	public float f_force; // Variavel criada para força
 	public int i_forceLevel; // Variavel criada para contar o nivel da força
 	public float f_sides; // Variavel criada para força dos lados
-	private float f_up;
 	private float seconds;
+	private int i;
+	private int i_forceUp;
 	public Rigidbody rb_person; 
 
 	// Use this for initialization
 	void Start () {
 		rb_person = this.GetComponent<Rigidbody> ();
-		f_force = 5f; // Adiciona o valor de 5 à variavel f_force
+		f_force = 30f; // Adiciona o valor de 5 à variavel f_force
 		f_sides = 4f; // Adiciona o valor de 4 à variavel f_sides
 		i_forceLevel = 0; // Adiciona o valor de 0 para o nivel da força
-		f_up = 5;
+		i_forceUp = 50;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -56,11 +57,15 @@ public class MovementController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-				this.transform.Translate (0f, 0.9f, 0f);
-				seconds -= 1f * Time.deltaTime 
-				if (seconds <= 0){
-					this.transform.Translate (0f, -0.9f, 0f);
+			//rb_person.AddForce (Vector3.up * f_force);
+			for (i = 0; i < i_forceLevel; i++) {
+				if (i_forceLevel < 6) {
+					rb_person.AddForce (Vector3.up * 95f);
+				} else {
+					rb_person.AddForce (Vector3.up * i_forceUp);
 				}
+			}	
 		}
 	}
 }
+
