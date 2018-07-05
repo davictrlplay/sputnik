@@ -58,8 +58,8 @@ public class MovementController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) { //Se a tecla pressionada for Space	
 			for (i = 0; i < i_forceLevel; i++) { //Para i igual a zero, aumentar até valor de i_forceLevel
-				if (i_forceLevel < 6) { //Se i_forceLever for menor que 6
-					rb_person.AddForce (Vector3.up * 95f / i_forceLevel); //Adiciona força de 95.0 divido por i_forceLevel no vetor 3 para cima
+				if (i_forceLevel < 3) { //Se i_forceLever for menor que 6
+					rb_person.AddForce (Vector3.up * (i_forceUp * i_forceLevel)); //Adiciona força no vetor 3 para cima
 				} else { //Caso for maior que 6
 					rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
 				}
