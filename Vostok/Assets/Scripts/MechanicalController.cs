@@ -7,7 +7,7 @@ public class MechanicalController : MonoBehaviour {
 	public Rigidbody velocity;
 
 	void Start () {
-		rb_person = this.GetComponent<Rigidbody> ();
+		rb_person = this.GetComponent<Rigidbody> (); //Variavel que pega o componente rigidbody
 	}
 
 	void Update() {
