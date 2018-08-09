@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour {
 			if (i_forceLevel <= 10) { //Se o nivel da força for menor/igual a 10
 				rb_person.AddForce (Vector3.forward * f_force); //Adiciona força para frente no objeto
 				i_forceLevel++; //Adiciona o valor de 1 para o nivel da força
-				Debug.Log ("Vel Level: " + i_forceLevel);
+				//Debug.Log ("Vel Level: " + i_forceLevel);
 			} else {
 				Debug.Log ("You cant add more force, the max velocitys level is 10");
 			}	
@@ -40,7 +40,7 @@ public class MovementController : MonoBehaviour {
 			if (i_forceLevel >= 1) { //Se o nivel da força for maior/igual a 1
 				rb_person.AddForce (Vector3.back * f_force); //Adiciona força para trás no objeto
 				i_forceLevel--; //Subtrai o valor de 1 para o nivel da força
-				Debug.Log ("Vel Level: " + i_forceLevel);
+				//Debug.Log ("Vel Level: " + i_forceLevel);
 			} else {
 				Debug.Log ("You cant remove more force, the min velocitys level is 0");
 			}

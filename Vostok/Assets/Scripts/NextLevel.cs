@@ -12,9 +12,11 @@ public class NextLevel : MonoBehaviour {
 
 	private int i;
 	private int i_level;
+	public string s_placeholder;
 
 	void Awake () {
 		i_level = 1;
+		s_placeholder = "placeholder 1";
 	}
 
 	void Update () {
@@ -30,18 +32,19 @@ public class NextLevel : MonoBehaviour {
 			if (i_level == 1) {
 				this.transform.position = placeholder2.transform.position;
 				i_level++;
-				Debug.Log ("1I_level = " + i_level);
+				s_placeholder = "placeholder 2";
 			}
 		
 			else if (i_level == 2) {
 				this.transform.position = placeholder3.transform.position;
 				i_level++;
-				Debug.Log ("2I_level = " + i_level);
+				s_placeholder = "placeholder 3";
 			}
 
 			else if (i_level == 3) {
 				this.transform.position = placeholder4.transform.position;
 				i_level++;
+				s_placeholder = "placeholder 4";
 			}
 								
 		}
