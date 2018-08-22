@@ -16,7 +16,7 @@ public class MovementController : MonoBehaviour {
 	void Start () {
 		rb_person = this.GetComponent<Rigidbody> ();
 		f_force = 30f; // Adiciona o valor de 5 à variavel f_force
-		f_sides = 4f; // Adiciona o valor de 4 à variavel f_sides
+		f_sides = 0.5f; // Adiciona o valor de 4 à variavel f_sides
 		i_forceLevel = 0; // Adiciona o valor de 0 para o nivel da força
 		i_forceUp = 250;
 	}
@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour {
 
 		//Para aumentar a velocidade do objeto
 		if (Input.GetKeyDown (KeyCode.W)) { //Se a tecla pressionada for W
-			if (i_forceLevel <= 10) { //Se o nivel da força for menor/igual a 10
+			if (i_forceLevel <= 30) { //Se o nivel da força for menor/igual a 10
 				rb_person.AddForce (Vector3.forward * f_force); //Adiciona força para frente no objeto
 				i_forceLevel++; //Adiciona o valor de 1 para o nivel da força
 				//Debug.Log ("Vel Level: " + i_forceLevel);
