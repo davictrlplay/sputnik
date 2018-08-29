@@ -56,11 +56,11 @@ public class MovementController : MonoBehaviour {
 			this.transform.Translate (-f_sides, 0f, 0f); //Remove o valor de f_sides para o eixo.X usando o transform
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) { //Se a tecla pressionada for Space	
-			
-					rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
-				}
+		if (Input.GetKeyDown (KeyCode.Space) && this.transform.position.y <= 0.8) { //Se a tecla pressionada for Space	
+			rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
 		}
+
 	}
+}
 
 
