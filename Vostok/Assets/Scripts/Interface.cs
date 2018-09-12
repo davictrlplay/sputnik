@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interface : MonoBehaviour {
 
@@ -15,12 +16,6 @@ public class Interface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-//			MainMenu = GameObject.FindWithTag ("MainMenu");
-////		OptionsMenu = GameObject.Find ("OptionsMenu");
-////		CreditsMenu = GameObject.Find ("CreditsMenu");
-////		LevelSelectorMenu = GameObject.Find ("LevelSelectorMenu");
-//	
 		MainMenu.SetActive (true);
 		OptionsMenu.SetActive (false);
 		CreditsMenu.SetActive (false);
@@ -73,6 +68,11 @@ public class Interface : MonoBehaviour {
 	{
 		MainMenu.SetActive (true);
 		LevelSelectorMenu.SetActive (false);
+	}
+
+	public void Lv1Select(){
+
+		SceneManager.LoadScene ("SceneOneTest");
 	}
 
 
