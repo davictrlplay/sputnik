@@ -16,6 +16,8 @@ public class Interface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
+
 		MainMenu.SetActive (true);
 		OptionsMenu.SetActive (false);
 		CreditsMenu.SetActive (false);
@@ -62,6 +64,8 @@ public class Interface : MonoBehaviour {
 	{
 		MainMenu.SetActive (false);
 		LevelSelectorMenu.SetActive (true);
+
+
 	}
 
 	public void VoltarLvSl()

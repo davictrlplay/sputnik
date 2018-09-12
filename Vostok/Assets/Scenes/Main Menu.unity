@@ -409,7 +409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4173411331177282, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114984773875460472, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
         type: 2}
@@ -451,8 +451,101 @@ Prefab:
       propertyPath: m_Text
       value: Level 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114256987956552132, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
+        type: 2}
+      propertyPath: m_Text
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114530312936055960, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
+        type: 2}
+      propertyPath: m_Text
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114003821478140238, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
+        type: 2}
+      propertyPath: m_Text
+      value: Level 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725562688207730, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
+        type: 2}
+      propertyPath: m_Text
+      value: Level 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600654748524376, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_Name
+      value: Level 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721244668805722, guid: 3f5f3a62bdcbced4f9bdd4925143c677,
+        type: 2}
+      propertyPath: m_Text
+      value: Level 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205972642128724, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678490196893806, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378993364012516, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814668499318016, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886138476053126, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600654748524376, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
+      propertyPath: m_TagString
+      value: LevelButton
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114992333619392718, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
     - {fileID: 114812230221927488, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3f5f3a62bdcbced4f9bdd4925143c677, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2093737861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2093737863}
+  - component: {fileID: 2093737862}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2093737862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093737861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fd852db3480ae49950ddb252576d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2093737863
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093737861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 152.2, y: 511, z: 0}
+  m_LocalScale: {x: 1.4625453, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
