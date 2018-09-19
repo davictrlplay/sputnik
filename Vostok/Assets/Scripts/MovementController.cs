@@ -89,8 +89,8 @@ public class MovementController : MonoBehaviour {
 		}
 
 		//Para aumentar a velocidade do objeto
-		if (Input.GetKeyDown (KeyCode.W)) { //Se a tecla pressionada for W
-			if (i_forceLevel <= 30) { //Se o nivel da força for menor/igual a 10
+		if (swipeDown) { //Se a tecla pressionada for W
+			if (i_forceLevel <= 10) { //Se o nivel da força for menor/igual a 10
 				rb_person.AddForce (Vector3.forward * f_force); //Adiciona força para frente no objeto
 				i_forceLevel++; //Adiciona o valor de 1 para o nivel da força
 				//Debug.Log ("Vel Level: " + i_forceLevel);
@@ -100,7 +100,7 @@ public class MovementController : MonoBehaviour {
 		}
 
 		//Para diminuir a velocidade do objeto
-		if (Input.GetKeyDown (KeyCode.S)) { //Se a tecla pressionada for S
+		if (Input.GetKey (KeyCode.S)) { //Se a tecla pressionada for S
 			if (i_forceLevel >= 1) { //Se o nivel da força for maior/igual a 1
 				rb_person.AddForce (Vector3.back * f_force); //Adiciona força para trás no objeto
 				i_forceLevel--; //Subtrai o valor de 1 para o nivel da força
@@ -116,11 +116,11 @@ public class MovementController : MonoBehaviour {
 		}
 
 		//Para ir para esquerda
-		if (Input.GetKeyDown (KeyCode.A)) { //Se a tecla pressionada for A
+		if (swipeLeft) { //Se a tecla pressionada for A
 			this.transform.Translate (-f_sides, 0f, 0f); //Remove o valor de f_sides para o eixo.X usando o transform
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && this.transform.position.y <= 0.8) { //Se a tecla pressionada for Space	
+		if (swipeUp && this.transform.position.y <= 0.8) { //Se a tecla pressionada for Space	
 			rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
 		}
 
