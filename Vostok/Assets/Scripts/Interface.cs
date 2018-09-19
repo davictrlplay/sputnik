@@ -11,24 +11,47 @@ public class Interface : MonoBehaviour {
 	public GameObject OptionsMenu;
 	public GameObject CreditsMenu;
 	public GameObject LevelSelectorMenu;
+	public List<GameObject> LevelSelectButtons;
 
 
 
 	// Use this for initialization
 	void Start () {
 		
-
+		LevelSelectButtons = new List<GameObject> ();
 		MainMenu.SetActive (true);
 		OptionsMenu.SetActive (false);
 		CreditsMenu.SetActive (false);
 		LevelSelectorMenu.SetActive (false);
+
+		int tempChildCount = LevelSelectorMenu.transform.childCount;
+
+		for (int i = 0; i < tempChildCount - 1; i++) {
+
+			LevelSelectButtons.Add(LevelSelectorMenu.transform.GetChild(i).gameObject);
+			LevelSelectButtons [i].SetActive (false);
+			Debug.Log (LevelSelectorMenu.transform.GetChild (i).name);
+		}
+
+		for (int i = 0; i < PlayerPrefs.GetInt ("CurrentLevel"); i++) {
+
+			LevelSelectButtons [i].SetActive (true);
+		}
+
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	}
+		//LÓGICA LEVEL SELECT
 
-	//ConfigB
+
+
+
+
+
+	}
+		
 
 	//OptConfig
 	public void AbrirOpt()
@@ -77,6 +100,11 @@ public class Interface : MonoBehaviour {
 	public void Lv1Select(){
 
 		SceneManager.LoadScene ("SceneOneTest");
+	}
+
+	public void RestartMainMenu(){
+
+		SceneManager.LoadScene ("Main Menu");
 	}
 
 
