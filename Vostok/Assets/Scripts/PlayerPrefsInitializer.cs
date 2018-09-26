@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerPrefsInitializer : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		//Verifica a existencia dos PlayerPrefs e os cria caso haja necessidade
 
@@ -16,10 +16,16 @@ public class PlayerPrefsInitializer : MonoBehaviour {
 			Debug.Log ("Player Prefs criado \"CurrentLevel\", 1");
 		}
 
+		if (!PlayerPrefs.HasKey ("IsFirstPlay")) {
 
-		if (!PlayerPrefs.HasKey ("LastPlayedLevel")) {
+			PlayerPrefs.SetInt ("IsFirstPlay", 1);
+			Debug.Log ("Player Prefs criado \"IsFirstPlay\", 1");
+		}
 
-			PlayerPrefs.SetInt ("LastPlayedLevel", 1);
+
+		if (!PlayerPrefs.HasKey ("LastUnlockedLevel")) {
+
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 1);
 			Debug.Log ("Player Prefs criado \"LastPlayedLevel\", 1)");
 		}
 

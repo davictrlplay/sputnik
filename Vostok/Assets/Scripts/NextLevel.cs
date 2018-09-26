@@ -16,14 +16,49 @@ public class NextLevel : MonoBehaviour {
 	public string s_placeholder;
 
 	void Awake () {
-		i_level = 1;
-		s_placeholder = "placeholder 1";
+		i_level = PlayerPrefs.GetInt ("CurrentLevel");
+		Debug.Log (" CurrentLevel " + PlayerPrefs.GetInt ("CurrentLevel").ToString ());
+		//s_placeholder = "placeholder 1";
 
 		rb = this.GetComponent<Rigidbody> ();
+
+		if (i_level == 1) {
+			
+			this.transform.position = placeholder1.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 1";
+
+		}
+
+		else if (i_level == 2) {
+			PlayerPrefs.SetInt ("IsFirstPlay", 0);
+			this.transform.position = placeholder2.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 2";
+		}
+
+		else if (i_level == 3) {
+			this.transform.position = placeholder3.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 3";
+		}
+
+		else if (i_level == 4) {
+			this.transform.position = placeholder4.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 4";
+		}
+
+
 	}
 
 	void Update () {
 		i_forceLevel = this.GetComponent<MovementController> ().i_forceLevel;
+
 	}
 
 	void OnCollisionEnter (Collision Coll) {
@@ -37,6 +72,8 @@ public class NextLevel : MonoBehaviour {
 				rb.velocity = new Vector3 (0, 0, 0);
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
+				PlayerPrefs.SetInt ("CurrentLevel", i_level);
+				PlayerPrefs.SetInt ("LastUnlockedLevel", i_level);
 				s_placeholder = "placeholder 2";
 			}
 		
@@ -45,6 +82,7 @@ public class NextLevel : MonoBehaviour {
 				rb.velocity = new Vector3 (0, 0, 0);
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
+				PlayerPrefs.SetInt ("CurrentLevel", i_level);
 				s_placeholder = "placeholder 3";
 			}
 
@@ -53,6 +91,7 @@ public class NextLevel : MonoBehaviour {
 				rb.velocity = new Vector3 (0, 0, 0);
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
+				PlayerPrefs.SetInt ("CurrentLevel", i_level);
 				s_placeholder = "placeholder 4";
 			}
 								

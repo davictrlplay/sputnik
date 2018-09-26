@@ -33,7 +33,7 @@ public class Interface : MonoBehaviour {
 			Debug.Log (LevelSelectorMenu.transform.GetChild (i).name);
 		}
 
-		for (int i = 0; i < PlayerPrefs.GetInt ("CurrentLevel"); i++) {
+		for (int i = 0; i < PlayerPrefs.GetInt ("LastUnlockedLevel"); i++) {
 
 			LevelSelectButtons [i].SetActive (true);
 		}
@@ -99,12 +99,60 @@ public class Interface : MonoBehaviour {
 
 	public void Lv1Select(){
 
+		PlayerPrefs.SetInt ("CurrentLevel", 1);
 		SceneManager.LoadScene ("SceneOneTest");
+
 	}
 
-	public void RestartMainMenu(){
+	public void Lv2Select(){
 
-		SceneManager.LoadScene ("Main Menu");
+		PlayerPrefs.SetInt ("CurrentLevel", 2);
+		SceneManager.LoadScene ("SceneOneTest");
+
+	}
+
+	public void Lv3Select(){
+
+		PlayerPrefs.SetInt ("CurrentLevel", 3);
+		SceneManager.LoadScene ("SceneOneTest");
+
+	}
+
+	public void Lv4Select(){
+
+		PlayerPrefs.SetInt ("CurrentLevel", 4);
+		SceneManager.LoadScene ("SceneOneTest");
+
+	}
+
+	public void Lv5Select(){
+
+		PlayerPrefs.SetInt ("CurrentLevel", 5);
+		SceneManager.LoadScene ("SceneOneTest");
+
+	}
+	public void Lv6Select(){
+
+		PlayerPrefs.SetInt ("CurrentLevel", 6);
+		SceneManager.LoadScene ("SceneOneTest");
+
+	}
+
+
+	public void RestartPlayerPrefs(){
+		
+			PlayerPrefs.SetInt ("CurrentLevel", 1);
+			Debug.Log ("Player Prefs criado \"CurrentLevel\", 1");
+			PlayerPrefs.SetInt ("IsFirstPlay", 1);
+			Debug.Log ("Player Prefs criado \"IsFirstPlay\", 1");
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 1);
+			Debug.Log ("Player Prefs criado \"LastPlayedLevel\", 1)");
+			PlayerPrefs.SetInt ("PlayerScore", 0);
+			Debug.Log ("Player Prefs criado \"PlayerScore\", 1)");
+			PlayerPrefs.SetInt ("WorldsUnlocked", 1);
+			Debug.Log ("Player Prefs criado \"WorldsUnlocked\", 1");
+
+			SceneManager.LoadScene ("Main Menu");
 	}
 
 
