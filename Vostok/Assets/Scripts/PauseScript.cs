@@ -38,11 +38,11 @@ public class PauseScript : MonoBehaviour {
 
 	public void GoToMainMenu(){
 
-		SceneManager.LoadScene ("MainMenu");
+		SceneManager.LoadScene ("Main Menu");
 	}
 
 	public void goBack(){
-		Time.timeScale = 0;
+		Time.timeScale = 1;
 		pauseButton.SetActive (true);
 		pausedText.SetActive (false);
 		mainMenuButton.SetActive (false);
