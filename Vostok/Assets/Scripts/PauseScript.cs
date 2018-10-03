@@ -44,6 +44,7 @@ public class PauseScript : MonoBehaviour {
 	public void goBack(){
 		Time.timeScale = 0;
 		pauseButton.SetActive (true);
+		pausedText.SetActive (false);
 		mainMenuButton.SetActive (false);
 		backButton.SetActive (false);
 
