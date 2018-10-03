@@ -1,32 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class pauseScript : MonoBehaviour {
+public class PauseScript : MonoBehaviour {
 
 	public bool paused;
+	public GameObject pauseButton;
+	public GameObject mainMenuButton;
+	public GameObject backButton;
+	public GameObject pausedText;
 
 	// Use this for initialization
 	void Start () {
 		paused = false;
+
+		pauseButton.SetActive (true);
+		pausedText.SetActive (false);
+		mainMenuButton.SetActive (false);
+		backButton.SetActive (false);
 	}
 
 	// Update is called once per frame
 	void Update () {
 
 	}
+
 	public void Pause(){
 
-		Debug.Log ("Entrou no pause");
-		paused = !paused;
+		pauseButton.SetActive (false);
+		pausedText.SetActive (true);
+		mainMenuButton.SetActive (true);
+		backButton.SetActive (true);
+		Time.timeScale = 0;
+	
+	}
 
-		if (paused) {
-			Time.timeScale = 0;
-		} else if (!paused) {
-			Time.timeScale = 1;
-		}
+	public void GoToMainMenu(){
 
+		SceneManager.LoadScene ("MainMenu");
+	}
 
+	public void goBack(){
+		Time.timeScale = 0;
+		pauseButton.SetActive (true);
+		mainMenuButton.SetActive (false);
+		backButton.SetActive (false);
 
-	}	
+	}
 }
