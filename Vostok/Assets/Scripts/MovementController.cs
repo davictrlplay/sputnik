@@ -17,10 +17,12 @@ public class MovementController : MonoBehaviour {
 	private int i;
 	public int i_forceUp;
 	public Rigidbody rb_person; 
+	public bool b_isGrounded;
 
 	// Use this for initialization
 	void Start () {
 		isDraging = false;
+		b_isGrounded = false;
 
 		rb_person = this.GetComponent<Rigidbody> ();
 		f_force = 30f; // Adiciona o valor de 5 à variavel f_force
@@ -31,6 +33,9 @@ public class MovementController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		////////////For Touch and Mouse////////////
+		///////////////////////////////////////////
 
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
 
@@ -88,8 +93,22 @@ public class MovementController : MonoBehaviour {
 			Reset ();
 		}
 
+		///////////////////////////////////////////
+		/////////////////////////////////////////// 
+
+
+		Collider[] isGrounded = Physics.OverlapSphere (this.transform.position, 0.1f);
+
+		//Debug.Log ("POS: " + isGrounded.Length);
+
+		for (int i = 0; i < isGrounded.Length; i++) {
+			if (isGrounded [i].gameObject.layer == 8) {
+				b_isGrounded = true;
+			}
+		}
+
 		//Para aumentar a velocidade do objeto
-		if (swipeDown) { //Se a tecla pressionada for W
+		if (swipeDown || Input.GetKeyDown (KeyCode.W)) { //Se a tecla pressionada for W
 			if (i_forceLevel <= 10) { //Se o nivel da força for menor/igual a 10
 				rb_person.AddForce (Vector3.forward * f_force); //Adiciona força para frente no objeto
 				i_forceLevel++; //Adiciona o valor de 1 para o nivel da força
@@ -111,22 +130,23 @@ public class MovementController : MonoBehaviour {
 		}
 
 		//Para ir para direita
-		if (swipeRight) { //Se a tecla pressionada for D
+		if (swipeRight || Input.GetKeyDown (KeyCode.D)) { //Se a tecla pressionada for D
 			this.transform.Translate (f_sides, 0f, 0f); //Adiciona o valor de f_sides para o eixo.X usando o transform
 		}
 
 		//Para ir para esquerda
-		if (swipeLeft) { //Se a tecla pressionada for A
+		if (swipeLeft || Input.GetKeyDown (KeyCode.A)) { //Se a tecla pressionada for A
 			this.transform.Translate (-f_sides, 0f, 0f); //Remove o valor de f_sides para o eixo.X usando o transform
 		}
 
-		if (swipeUp && this.transform.position.y <= 0.8) { //Se a tecla pressionada for Space
+		if (swipeUp && b_isGrounded || Input.GetKeyDown (KeyCode.Space) && b_isGrounded) { //Se a tecla pressionada for Space
 			Debug.Log ("Pulo");
 			rb_person.AddForce (Vector3.up * i_forceUp); //Adiciona força de i_forceUp
+			b_isGrounded = false;
 		}
 
 	}
-
+		
 	public void Reset() {
 		startTouch = swipeDelta = Vector3.zero;
 		isDraging = false;
