@@ -91,6 +91,7 @@ public class NextLevel : MonoBehaviour {
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
 				PlayerPrefs.SetInt ("CurrentLevel", i_level);
+				PlayerPrefs.SetInt ("LastUnlockedLevel", i_level);
 				s_placeholder = "placeholder 3";
 			}
 
@@ -100,7 +101,32 @@ public class NextLevel : MonoBehaviour {
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
 				PlayerPrefs.SetInt ("CurrentLevel", i_level);
+				PlayerPrefs.SetInt ("LastUnlockedLevel", i_level);
 				s_placeholder = "placeholder 4";
+			}
+
+			else if (i_level == 4) {
+				this.transform.position = placeholder4.transform.position;
+				rb.velocity = new Vector3 (0, 0, 0);
+				this.GetComponent<MovementController> ().i_forceLevel = 0;
+				i_level++;
+				PlayerPrefs.SetInt ("CurrentLevel", i_level);
+				PlayerPrefs.SetInt ("LastUnlockedLevel", i_level);
+				s_placeholder = "placeholder 5";
+			}
+
+			else if (i_level == 5) {
+				this.transform.position = placeholder4.transform.position;
+				rb.velocity = new Vector3 (0, 0, 0);
+				this.GetComponent<MovementController> ().i_forceLevel = 0;
+				i_level++;
+				PlayerPrefs.SetInt ("CurrentLevel", i_level);
+				PlayerPrefs.SetInt ("LastUnlockedLevel", i_level);
+				s_placeholder = "placeholder 6";
+			}
+
+			else if (i_level == 6) {
+				Debug.Log ("CABO OTÁRIO");
 			}
 								
 		}

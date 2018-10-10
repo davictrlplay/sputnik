@@ -45,11 +45,6 @@ public class Interface : MonoBehaviour {
 	void Update () {
 		//LÓGICA LEVEL SELECT
 
-
-
-
-
-
 	}
 		
 
