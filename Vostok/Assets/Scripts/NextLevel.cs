@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NextLevel : MonoBehaviour {
 
+	public GameObject fase1;
+	public GameObject fase2;
+	public GameObject fase3;
+	public GameObject fase4;
 	public GameObject placeholder1;
 	public GameObject placeholder2;
 	public GameObject placeholder3;
@@ -18,12 +22,22 @@ public class NextLevel : MonoBehaviour {
 	void Awake () {
 		i_level = PlayerPrefs.GetInt ("CurrentLevel");
 		Debug.Log (" CurrentLevel " + PlayerPrefs.GetInt ("CurrentLevel").ToString ());
-		//s_placeholder = "placeholder 1";
+		s_placeholder = "placeholder 1";
 
 		rb = this.GetComponent<Rigidbody> ();
 
+		fase1 = GameObject.Find ("Fase 1");
+		fase2 = GameObject.Find ("Fase 2");
+		fase3 = GameObject.Find ("Fase 3");
+		fase4 = GameObject.Find ("Fase 4");
+
+		placeholder1 = fase1.transform.Find("placeholder 1").gameObject;
+		placeholder2 = fase2.transform.Find("placeholder 2").gameObject;
+		placeholder3 = fase3.transform.Find("placeholder 3").gameObject;
+		placeholder4 = fase4.transform.Find("placeholder 4").gameObject;
+
+
 		if (i_level == 1) {
-			
 			this.transform.position = placeholder1.transform.position;
 			rb.velocity = new Vector3 (0, 0, 0);
 			this.GetComponent<MovementController> ().i_forceLevel = 0;
@@ -52,21 +66,15 @@ public class NextLevel : MonoBehaviour {
 			this.GetComponent<MovementController> ().i_forceLevel = 0;
 			s_placeholder = "placeholder 4";
 		}
-
-
-	}
-
+	} //Fim do Awake
+		
 	void Update () {
-		i_forceLevel = this.GetComponent<MovementController> ().i_forceLevel;
+		i_forceLevel = this.GetComponent<MovementController> ().i_forceLevel; //Para pegar sempre a variavel "i_forceLevel que está dentro do Script MovimentController deste objeto"
 
-	}
+	} //Fim do Update
 
 	void OnCollisionEnter (Collision Coll) {
 		if (Coll.gameObject.tag == "NextLevel") {
-			//for (i = 0; i < i_forceLevel; i++) {
-			//	this.GetComponent<Rigidbody> ().AddForce (Vector3.forward * this.GetComponent<MovementController> ().f_force);
-			//}
-
 			if (i_level == 1) {
 				this.transform.position = placeholder2.transform.position;
 				rb.velocity = new Vector3 (0, 0, 0);

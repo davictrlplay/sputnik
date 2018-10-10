@@ -9,11 +9,7 @@ public class MechanicalController : MonoBehaviour {
 	void Start () {
 		rb_person = this.GetComponent<Rigidbody> (); //Variavel que pega o componente rigidbody
 	}
-
-	void Update() {
-
-	}
-
+		
 	void OnCollisionEnter (Collision col) {
 		if (col.gameObject.tag == "Booster") {
 			Debug.Log ("Boosting");

@@ -12,15 +12,6 @@ public class DeathCollider : MonoBehaviour {
 		}
 	}
 
-	void Start () {
-
-	}
-
-
-	void Update () {
-
-	}
-
 	public void restartLevel (int level) {
 		if (level == 1) {
 			GameObject.Find("Person").transform.position = GameObject.Find(currentPlaceHolder).transform.position;
