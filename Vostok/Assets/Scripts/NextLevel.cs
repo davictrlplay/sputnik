@@ -8,10 +8,16 @@ public class NextLevel : MonoBehaviour {
 	public GameObject fase2;
 	public GameObject fase3;
 	public GameObject fase4;
+	public GameObject fase5;
+	public GameObject fase6;
+	public GameObject fase7;
 	public GameObject placeholder1;
 	public GameObject placeholder2;
 	public GameObject placeholder3;
 	public GameObject placeholder4;
+	public GameObject placeholder5;
+	public GameObject placeholder6;
+	public GameObject placeholder7;
 	public Rigidbody rb;
 	public int i_forceLevel;
 
@@ -30,11 +36,17 @@ public class NextLevel : MonoBehaviour {
 		fase2 = GameObject.Find ("Fase 2");
 		fase3 = GameObject.Find ("Fase 3");
 		fase4 = GameObject.Find ("Fase 4");
+		fase5 = GameObject.Find ("Fase 5");
+		fase6 = GameObject.Find ("Fase 6");
+		fase7 = GameObject.Find ("Fase 7");
 
 		placeholder1 = fase1.transform.Find("placeholder 1").gameObject;
 		placeholder2 = fase2.transform.Find("placeholder 2").gameObject;
 		placeholder3 = fase3.transform.Find("placeholder 3").gameObject;
 		placeholder4 = fase4.transform.Find("placeholder 4").gameObject;
+		placeholder5 = fase5.transform.Find("placeholder 5").gameObject;
+		placeholder6 = fase6.transform.Find("placeholder 6").gameObject;
+		placeholder7 = fase7.transform.Find("placeholder 7").gameObject;
 
 
 		if (i_level == 1) {
@@ -65,6 +77,27 @@ public class NextLevel : MonoBehaviour {
 			rb.velocity = new Vector3 (0, 0, 0);
 			this.GetComponent<MovementController> ().i_forceLevel = 0;
 			s_placeholder = "placeholder 4";
+		}
+
+		else if (i_level == 5) {
+			this.transform.position = placeholder5.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 5";
+		}
+
+		else if (i_level == 6) {
+			this.transform.position = placeholder6.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 6";
+		}
+
+		else if (i_level == 7) {
+			this.transform.position = placeholder7.transform.position;
+			rb.velocity = new Vector3 (0, 0, 0);
+			this.GetComponent<MovementController> ().i_forceLevel = 0;
+			s_placeholder = "placeholder 7";
 		}
 	} //Fim do Awake
 		
@@ -106,7 +139,7 @@ public class NextLevel : MonoBehaviour {
 			}
 
 			else if (i_level == 4) {
-				this.transform.position = placeholder4.transform.position;
+				this.transform.position = placeholder5.transform.position;
 				rb.velocity = new Vector3 (0, 0, 0);
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
@@ -116,7 +149,7 @@ public class NextLevel : MonoBehaviour {
 			}
 
 			else if (i_level == 5) {
-				this.transform.position = placeholder4.transform.position;
+				this.transform.position = placeholder6.transform.position;
 				rb.velocity = new Vector3 (0, 0, 0);
 				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				i_level++;
@@ -126,7 +159,11 @@ public class NextLevel : MonoBehaviour {
 			}
 
 			else if (i_level == 6) {
+				this.transform.position = placeholder7.transform.position;
+				rb.velocity = new Vector3 (0, 0, 0);
+				this.GetComponent<MovementController> ().i_forceLevel = 0;
 				Debug.Log ("CABO OTÁRIO");
+				s_placeholder = "placeholder 7";
 			}
 								
 		}
