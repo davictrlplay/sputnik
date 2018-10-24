@@ -8,6 +8,7 @@ public class CollisionControler : MonoBehaviour {
 			col.gameObject.GetComponent<Rigidbody> ().velocity = new Vector3 (0, 0, 0); //Seta a velocidade do objeto colidido como 0
 			col.gameObject.GetComponent<MovementController> ().i_forceLevel = 0; //Seta a variavel "i_forceLevel" (está dentro do script MovementController do obj) como 0
 			col.gameObject.transform.position = GameObject.Find(col.gameObject.GetComponent<NextLevel> ().s_placeholder).transform.position; //Muda a posição do player para seu respectivo placeholder
+			col.gameObject.GetComponentInChildren<Animator> ().speed = 0f;
 
 		}
 	}

@@ -15,6 +15,7 @@ public class DeathCollider : MonoBehaviour {
 	public void restartLevel (int level) {
 		if (level == 1) {
 			GameObject.Find("Person").transform.position = GameObject.Find(currentPlaceHolder).transform.position;
+			GameObject.Find("Person").GetComponentInChildren<Animator> ().speed = 0f;
 		}
 
 	}
