@@ -14,7 +14,7 @@ public class MechanicalController : MonoBehaviour {
 		if (col.gameObject.tag == "Booster") {
 			Debug.Log ("Boosting");
 			Destroy (col.gameObject);
-			rb_person.AddForce (Vector3.forward * 1000f);
+			rb_person.AddForce (Vector3.forward * 250f);
 		}
 		if (col.gameObject.tag == "Breaker") {
 			Debug.Log ("Breaking");
