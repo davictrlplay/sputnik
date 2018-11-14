@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour {
 
 		rb_person = this.GetComponent<Rigidbody> ();
 		f_force = 30f; // Adiciona o valor de 5 à variavel f_force
-		f_sides = 0.5f; // Adiciona o valor de 4 à variavel f_sides
+		f_sides = 0.25f; // Adiciona o valor de 4 à variavel f_sides
 		i_forceLevel = 0; // Adiciona o valor de 0 para o nivel da força
 		i_forceUp = 250;
 
