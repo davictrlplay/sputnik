@@ -51,7 +51,7 @@ public class PlayerPrefsInitializer : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 1);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 1);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 1);");
 
 		}
@@ -59,35 +59,35 @@ public class PlayerPrefsInitializer : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Alpha2)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 2);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 2);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 2);");
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha3)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 3);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 3);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 3);");
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha4)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 4);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 4);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 4);");
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha5)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 5);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 5);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 5);");
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha6)) {
 
-			PlayerPrefs.SetInt ("CurrentLevel", 6);
+			PlayerPrefs.SetInt ("LastUnlockedLevel", 6);
 			Debug.Log ("PlayerPrefs.SetInt (\"CurrentLevel\", 6);");
 
 		}
